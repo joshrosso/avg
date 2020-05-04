@@ -14,7 +14,7 @@ following.
 
 ```
 cp -rv font/lacquer /usr/share/font &&\
-sudo chmod 066 /usr/share/font/lacquer
+sudo chmod 644 /usr/share/font/lacquer
 ```
 
 ## Thumbnail Creation
