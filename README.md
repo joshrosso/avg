@@ -12,9 +12,9 @@ Media uses the [Lacquer-Font/Lacquer](https://github.com/Lacquer-Font/Lacquer).
 The `.ttf` file is available in the font directory. To install on Linux, do the
 following.
 
-```
-cp -rv font/lacquer /usr/share/font &&\
-sudo chmod 644 /usr/share/font/lacquer
+```shell script
+sudo cp -rv font/lacquer /usr/share/font &&\ 
+  sudo chmod 644 /usr/share/font/Lacquer-Regular.ttf
 ```
 
 ## Thumbnail Creation
@@ -94,6 +94,19 @@ cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview
    the depends block of the `PKGBUILD`.
 
    > see https://aur.archlinux.org/packages/obs-studio-git/#comment-737390
+
+   > as of 08/30/2020, it appears the correct cef version is being used.
+
+1. Resolve missing dependencies not resolvable in arch repos.
+
+    ```
+    ==> ERROR: 'pacman' failed to install missing dependencies.
+    ==> Missing dependencies:
+      -> libfdk-aac
+      -> swig
+      -> cef-minimal-3770
+    ```
+   > In the above, only `cef-minimal-3770` requires downloading and installing from [AUR](https://aur.archlinux.org). However, all dependencies report missing. You **only** need to explicitly install `cef-minimal-3770` in the above case. All other dependencies, found in official repos, will download themselves.
 
 1. Compile and install obs.
 
